@@ -1,0 +1,49 @@
+
+body{
+    text-align: center;
+    font-family: "arial black", Helvetica, sans-serif;
+}
+
+img{
+    max-width: 100%;
+    height: 250px;
+    border-radius: 5%;
+}
+
+p{
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: justify;
+}
+
+a{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.8em;
+    color:rgb(230, 78, 18);
+}
+
+figcaption{
+    color: rgb(32, 54, 100);
+}
+
+#main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color:darkgray;
+}
+
+.container{
+    width: 50%;
+    border: 5px rgb(48, 48, 48) double;
+    border-radius: 10px;
+    box-shadow: 6px 6px 6px black;
+    Padding: 10px;
+  }
+
+  #titre{
+    border: 1rem #3769b0 solid;
+    color: #fbcc03;
+    font-size: 5rem ;
+  }
+  /*#3769b0
+  #fbcc03*/
