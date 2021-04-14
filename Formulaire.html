@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <link rel="stylesheet" href="reset.css" />
+  <link rel="stylesheet" href="styles.css" />
+  <title>Formulaire Pour FCCamp</title>
+</head>
+
+<body>
+  <h1 id="title">Formulaire</h1>
+  <p id="description">Le petit formulaire pour les pros</p>
+  <form class="form" id="survey-form">
+
+    <label class="form__label" id="name-label" for="nameinput">Pseudo</label>
+    <input class="form__input" type="text" name="pseudo" id="name" placeholder="Votre pseudo" maxlength="15" required
+      autofocus>
+
+    <label class="form__label" id="email-label" for="emailinput">Email</label>
+    <input class="form__input" type="email" name="email" id="email" placeholder="Votre Email" maxlength="25" required>
+
+    <label class="form__label" id="number-label" for="numberinput">Age</label>
+    <input class="form__input" type="number" name="email" id="number" placeholder="Votre Age" min="10" max="100"
+      required>
+
+    <label for="hobbies" class="form__label">Quels sont tes hobbies ?</label>
+    <select name="hobbies" id="dropdown" class="form__input">
+      <option value="lecture">Lecture</option>
+      <option value="equitation">Equitation</option>
+      <option value="jeux video">Jeux vidéo</option>
+      <option value="tennis">Tennis</option>
+      <option value="velo">Vélo</option>
+      <option value="technologies">Technologies</option>
+      <option value="randonnees">Randonnées</option>
+      <option value="reseauxsociaux">Réseaux-sociaux</option>
+    </select>
+
+    <fieldset class="fieldset__radio">
+      <p class="form__label">Sexe</p>
+      <input type="radio" name="sexe" value="femme" id="femme" />
+      <label class="form__label" for="femme">Femme</label>
+      <input type="radio" name="sexe" value="homme" id="homme" />
+      <label class="form__label" for="homme">Homme</label>
+    </fieldset>
+
+    <fieldset class="fieldset__checkbox">
+      <p class="form__label">Vos pays visités pendant les vacances :</p>
+      <div>
+        <input type="checkbox" name="france" value="pays" id="pays" />
+        <label class="form__label" for="france">France</label>
+      </div>
+      <div>
+        <input type="checkbox" name="allemagne" value="pays" id="pays" />
+        <label class="form__label" for="allemagne">Allemagne</label>
+      </div>
+      <div>
+        <input type="checkbox" name="belgique" value="pays" id="pays" />
+        <label class="form__label" for="belgique">Belgique</label>
+      </div>
+      <div>
+        <input type="checkbox" name="espagne" value="pays" id="pays" />
+        <label class="form__label" for="espagne">Espagne</label>
+      </div>
+      <div>
+        <input type="checkbox" name="italie" value="pays" id="pays" />
+        <label class="form__label" for="italie">Italie</label>
+      </div>
+      <div>
+        <input type="checkbox" name="suisse" value="pays" id="pays" />
+        <label class="form__label" for="suisse">Suisse</label>
+      </div>
+    </fieldset>
+
+    <label class="form__label" for="sugestion">Des sugestions ?</label>
+    <textarea class="form__input" name="sugestion" id="sugestion" rows="10" cols="50"> </textarea>     
+
+    <input class="form__input form__input__sumbit" id="submit" type="submit" value="Envoyer" />
+
+  </form>
+</body>
+
+</html>
