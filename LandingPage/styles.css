@@ -3,15 +3,17 @@ header {
     width: 100%;
     display: flex;
     border-radius: 0px 30px 0px 30px;
+    position: relative;
+    z-index: 2;
 }
 
 .logo__image {
-    width: 200px;
-    height: 150px;
-    padding: 20px;
+    height: 9.35rem; 
+    width: 12rem;
+    padding: 1.25rem;
 }
 
-.nav, ul {
+.nav-link, ul {
     list-style: none;
     margin: 0px;
     padding: 0px;
@@ -25,7 +27,7 @@ header {
     width: 40%;
 }
 
-.nav {
+.nav-link {
     width: 100%;
     display: flex;
     justify-content: flex-end;
@@ -35,7 +37,7 @@ header {
 }
 
 li a {
-    transition: all .35s ;
+    transition: all .35 s ;
     color: white;
     text-decoration: none;
     border: 3px rgb(165, 163, 163) solid;
@@ -48,6 +50,7 @@ li a {
 
 body {
     background-color:  rgb(165, 163, 163);
+    margin: 0;
 }
 
 .menu a:hover, 
@@ -60,4 +63,28 @@ body {
 
 .menu a.actif {   
     border-color: #1ABC9C ;
+}
+
+.home{
+    background-image: url(https://ark-division.fr/wp-content/uploads/ark-survival-mod-glacius-ark-division-france.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+    width: 100vw;
+    clip-path: polygon(
+      0 0, /* left top */
+      100% 0, /* right top */ 
+      100% 250px, /* right bottom */
+      50% 100%, /* center */
+      0 250px  /* left bottom */
+    );
+    margin-top: -15rem;
+}
+.video{
+    display: flex;
+    justify-content: center;
+    width: 100vw;
+    align-items: center;
+    height: 100vh;
 }
