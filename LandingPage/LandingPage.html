@@ -9,22 +9,22 @@
 </head>
 
 <body>
-  <header>
-    <img class="logo__image" src="https://www.seekpng.com/png/full/224-2245945_ark-survival-evolved-logo-png.png">
+  <header id="header">
+    <img class="logo__image" id="header-img" src="https://www.seekpng.com/png/full/224-2245945_ark-survival-evolved-logo-png.png">
     <h1>Arkasia</h1>
-    <nav class="nav-link" id="nav-bar">
+    <nav class="nav-link-s" id="nav-bar">
       <ul class="menu">
         <li>
-          <a href="#homeless" class="actif">Home</a>
+          <a href="#homeless" id="actif" class="nav-link">Accueil</a>
         </li>
         <li>
-          <a href="#discord">Server</a>
+          <a href="#discord" class="nav-link">Serveur</a>
         </li>
         <li>
-          <a href="#">Rules</a>
+          <a href="#regles" class="nav-link">Règles</a>
         </li>
         <li>
-          <a href="#">Contact</a>
+          <a href="#contact" class="nav-link">Contact</a>
         </li>
       </ul>
     </nav>
@@ -32,13 +32,14 @@
 
   <section class="home" id="homeless">
 
-    <div class="video" id="video">
-      <iframe width="500" height="300" src="https://www.youtube.com/embed/FW9vsrPWujI?controls=0" frameborder="0"
+    <div class="video">
+      <iframe width="500" id="video" height="300" src="https://www.youtube.com/embed/FW9vsrPWujI?controls=0" frameborder="0"
         allow="autoplay; clipboard-write; encrypted-media; picture-in-picture" allowfullscreen>
       </iframe>
     </div>
 
   </section>
+
 
   <section class="server">
 
@@ -161,16 +162,62 @@
           <span class="ratio">Yes</span>
         </li>
       </ul>
-
-
-
-
-
-
-
     </article>
 
   </section>
+
+  <section class="rules" id="regles">
+    <h2>Les Règles</h2>
+    <p class="rules__text">La convivialité et entraide sont les bienvenues au sein de nos serveurs.</br>
+      Essayez d'être respectueux envers les autres et les nouveaux. L'égoïsme n'est pas de rigueur ici.</br>
+      Merci de faire attention a ne pas laisser des objets important dans les inventaires de créatures et Atelier/forge/centre d'usinage labo de chimie.</br>
+      L'admin n'est pas la pour régler vos conflits inter tribu, c'est à vous d'adapter vos droits d'administration dans votre tribu.
+    </p>
+    <hr>
+    <div class="list__text__div">
+    <ul class="rules__text__list">
+      <li>Utiliser un quelconque logiciel tiers (cheat) est interdit</li>
+      <li>Aucun stuff ou dino ne sera rendu sur un bug commun du jeu</li>
+      <li>Tous comportements et propos injurieux sont interdits</li>
+      <li>Il est interdit de bloquer les grottes contenant des artéfacts</li>
+      <li>Il est interdit de construire dans les zones de spawn des castors : carte des zones épinglées sur le salon correspondant à la map sur discord.</li>
+      <li>Le Bronto n’est pas apprivoisable</li>
+      <li>Il est interdit d'effectuer de la reproduction sauvage de dino</li>
+      <li>Il est interdit de bloquer les ponts et les plages</li>
+      <li>Il est interdit de bloquer les entrées des grottes et des obélisques</li>
+      <li>Il est interdit de noyer les joueurs déconnectés</li>
+      <li>Il est interdit de construire des enclos démesurés par rapport à votre base et au nombre de dino.</li>
+      <li>Il est interdit de bloquer réserver une zone avec des structures (la base sera supprimée)</li>
+      <li>Il est interdit de se connecter pour relancer les timers des dinos ou des structures.</li>
+      <li>Il est interdit de verrouiller les collecteurs de sève et puits de pétrole</li>
+      <li>Il est interdit de laisser des dinos dans les grottes</li>
+      <li>Il est interdit de laisser des dinos agressifs sur la map</li>
+      <li>Les enclos pour apprivoiser devront être enlevés après usage</li>
+      <li>Les bases ne devront pas être plus grande que nécessaire</li>
+      <li>Il est interdit de mettre des tourelles à la faille aux Wyvernes</li>
+      <li>Il est interdit de mettre des structures devant les drop et beacon pour les récupérer plus rapidement.</li>
+      <li>Il est interdit de récupérer des créatures abandonnées</li>
+    </ul>
+  </div>
+  </section>
+  
+  <section id="contact" class="contact">
+  <div class="contact__div">
+    <h2>Contact</h2>
+    <p class="rules__text">Si vous voulez me contacter et participer, veuillez joindre votre e-mail !</p>
+    <form id="form" action=" https://www.freecodecamp.com/email-submit" method="get">
+      
+      <input class="form__input" type="email" name="email" id="email" placeholder="Votre Email" maxlength="25" required>
+      
+      <input class="form__input__sumbit" id="submit" type="submit" value="Envoyer" />
+    </form>
+  </div>
+
+</section>
+
+<footer>
+
+</footer>
 </body>
 
-</html>
+</html> 
