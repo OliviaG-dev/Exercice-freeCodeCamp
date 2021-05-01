@@ -1,0 +1,97 @@
+body{
+    display: flex;
+    font-size: 1.2rem;
+    line-height: 1.5;
+    font-family:'Playfair Display', serif;
+}
+
+#navbar {
+    background-color: cadetblue;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    flex-basis: 45%;
+    padding: 2rem;
+}
+
+.memu__list {
+    border: 0.263rem solid rgb(25, 64, 95); ;
+    margin-bottom: 0.063rem ;
+}
+
+.menu .memu__list .nav-link {
+    text-decoration: none ;
+    display: block ;
+    background: rgb(169, 223, 240);
+    color: rgb(25, 64, 95) ;
+    font: 1.21rem 'Montserrat', sans-serif;
+    padding: 1.25rem 0.35rem ;
+    font-weight: bold;
+}
+
+.menu {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    flex-basis: 7%;
+    justify-content: space-between;
+}
+
+#main-doc {
+    background-color: rgb(25, 64, 95);
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+    color: cornsilk;
+}
+
+header {
+    color:rgb(255, 255, 255);
+    font-size: 3.5rem;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.important {
+    border:rgb(128, 128, 128) 0.52rem solid;
+}
+
+.item__list {
+    font-weight: bold;
+    color: rgb(169, 223, 240);
+}
+
+.liens a {
+    text-decoration: none;
+    font-size: 1.2rem;
+    line-height: 1.5;
+    font-family:'Playfair Display', serif;
+    color: rgb(169, 223, 240);
+}
+
+.button__retour a {
+    text-decoration: none;
+    font-size: 1.2rem;
+    line-height: 1.5;
+    color: rgb(169, 223, 240);
+    border: 0.263rem solid  rgb(169, 223, 240);
+    padding: 1.5rem;
+}
+
+.button__retour{
+    list-style: none;
+    text-align: right;
+}
+
+.mark{
+    color: rgb(189, 188, 255);
+    font-weight: bold;
+}
+
+@media only screen and (max-width: 25rem) {
+    #main-doc {
+    margin-left: -0.625rem;
+    }
+
+}

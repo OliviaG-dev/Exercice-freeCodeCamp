@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="Styles.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200&family=Playfair+Display&display=swap" rel="stylesheet">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Technical Documentation Page</title>
+</head>
+
+<nav id="navbar">
+    <header>Flexbox</header>
+    <ul class="menu">
+        <li class="memu__list"><a class="nav-link" href="#Introduction">Introduction</a></li>
+        <li class="memu__list"><a class="nav-link" href="#Les_éléments_de_base_de_CSS_Flexbox">Les éléments de base de CSS Flexbox</a></li>
+        <li class="memu__list"><a class="nav-link" href="#Créer_des_items_et_les_mettre_en_page">Créer des items et les mettre en page</a></li>
+        <li class="memu__list"><a class="nav-link" href="#Regrouper_des_éléments">Regrouper des éléments </a></li>
+        <li class="memu__list"><a class="nav-link" href="#Glissement_vertical">Glissement vertical</a></li>
+        <li class="memu__list"><a class="nav-link" href="#Déplacer_les_conteneurs_flexibles_un_par_un">Déplacer les conteneurs flexibles un par un </a></li>
+        <li class="memu__list"><a class="nav-link" href="#Taille_flexible_des_éléments">Taille flexible des éléments</a></li>
+        <li class="memu__list"><a class="nav-link" href="#En_conclusion">En conclusion</a></li>
+    </ul>
+</nav>
+
+<main id="main-doc">
+    <section class="main-section" id="Introduction">
+        <header>Introduction</header>
+        <article>
+            <p>
+                Le module CSS3 Flexbox Layout fournit une façon efficace de disposer, aligner et distribuer l'espace
+                entre les items d'un container, même lorsque leurs dimensions
+                sont inconnues et/ou dynamiques - d'où le terme "flex".</br></br>
+                Le plus important à retenir c'est qu'avec Flexbox la disposition n'est pas rigidement directionnelle,
+                contrairement à ce que nous connaissons habituellement en CSS —
+                où Block est basé sur un schéma vertical et Inline sur un schéma horizontal. Cela fonctionne bien pour
+                les pages, mais ça manque de... flexibilité lorsqu'il s'agit
+                d'applications complexes, en particulier lorsqu'il faut s'adapter aux changements d'orientation de
+                device, redimensionner, étendre ou réduire l'espace, etc.</br></br>
+            </p>
+            <p class="important">
+                <span class="item__list">Note importante :</span> Flexbox est plutôt adapté aux composants d'une application, de petite
+                échelle, alors que les grilles conviennent à des mises en page
+                complexes et à grande échelle. CSS Grid et Flexbox ont des usages différents mais sont faits pour
+                travailler ensemble !
+            </p>
+        </article>
+    </section>
+
+    <section class="main-section" id="Les_éléments_de_base_de_CSS_Flexbox">
+        <header>Les éléments de base de CSS Flexbox</header>
+        <p>
+            Le travail de Flexbox repose sur un <span class=mark>Conteneur</span> (flex container), dans lequel on va introduire plusieurs
+            éléments (flex items). Le conteneur transmet ses propriétés
+            aux différents items. C’est-à-dire : les différents éléments sont les conteneurs flexibles, dont la
+            flexibilité réside dans le fait qu’ils se trouvent à l’intérieur
+            du conteneur.<br></br>
+            Chaque axe détermine une direction. Généralement l’axe principal est orienté de gauche à droite, et l’axe
+            perpendiculaire du haut vers le bas. On dit de Flexbox que
+            c’est un <span class=mark>système à une dimension</span> : les différents éléments sont disposés en ligne ou en colonne. Il n’est
+            prévu aucune combinaison ligne/colonne. Si l’on opte pour
+            une disposition en ligne (ce qui est d’ailleurs l’option par défaut), CSS Flexbox essaiera de disposer tous
+            les items en ligne. On peut cependant « prendre la main »
+            et forcer un retour à la ligne.
+        </p>
+    </section>
+
+    <section class="main-section" id="Créer_des_items_et_les_mettre_en_page">
+        <header>Créer des items et les mettre en page</header>
+        <p>
+            Avant de pouvoir disposer des éléments sur une page, vous devez commencer par les créer. Cela se fait comme
+            d’habitude avec HTML :
+        </p>
+        <pre>
+    <code>
+        &lt;!DOCTYPE html> 
+        &lt;html>
+        &lt;head>
+
+        &lt;/head>
+        &lt;body>
+
+        &lt;div class="flex-container">
+        &lt;div class="flex-item">Box 1</div>
+        &lt;div class="flex-item">Box 2</div>
+        &lt;div class="flex-item">Box 3</div> 
+        &lt;/div>
+
+        &lt;/body>
+        &lt;/html>
+    </code>
+    </pre>
+        <p>
+            De cette manière, les trois éléments devraient être les uns en dessous des autres. Avec le CSS, nous
+            répartissons les éléments sur l’axe principal.
+        </p>
+        <pre>
+    <code>
+        &lt;style>
+            .flex-container {
+            display: flex;
+            background-color: grey;
+            }
+            
+            .flex-item {
+            background-color: white;
+            width: 200px;
+            margin: 10px;
+            text-align: center;
+            line-height: 100px;
+            font-size: 50px;
+            }
+        &lt;/style>
+    </code>
+    </pre>
+        <img class="image__flexbox_1"
+            src="https://www.ionos.fr/digitalguide/fileadmin/DigitalGuide/Screenshots_2020/flexbox-1.png">
+
+        <p>
+            Dans cette feuille de style, nous avons commencé par créer le conteneur. Flexbox permet d’ajouter la mention
+            « display: flex; ». Comme nous n’avons pas
+            donné de précision particulière, les éléments sont disposés les uns après les autres, de gauche à droite.
+            Grâce à la propriété « <span class=mark>justify-content</span> »,
+            vous disposez de 5 différentes manières de disposer les items.
+        </p>
+
+        <ul>
+            <li><span class="item__list">flex-start</span> : aligné à gauche</li>
+            <li><span class="item__list">flex-end</span> : aligné à droite</li>
+            <li><span class="item__list">center</span> : centré</li>
+            <li><span class="item__list">space-around</span> : répartis sur la ligne avec un espacement égal autour de
+                chacun</li>
+            <li><span class="item__list">space-between</span> : répartis sur la ligne avec un espacement égal entre
+                chacun</li>
+        </ul>
+
+        <p>
+            Le reste du code n’a qu’une valeur « cosmétique » et n’a en fait aucun lien avec les conteneurs
+            flexibles.</br>
+            Avec Flexbox, les CSS ont par défaut une orientation horizontale. Il est cependant possible d’aligner les
+            éléments en colonne. On peut aussi inverser la direction,
+            c’est-à-dire aller de gauche à droite ou de bas en haut. Pour ce faire, on utilise la propriété « <span class=mark>flex-direction</span> » :
+        </p>
+
+        <ul>
+            <li><span class="item__list">row</span> : de gauche à droite</li>
+            <li><span class="item__list">row-reverse</span> : de droite à gauche</li>
+            <li><span class="item__list">column</span> : de haut en bas</li>
+            <li><span class="item__list">column-reverse</span> : de bas en haut</li>
+        </ul>
+
+        <p>
+            La propriété « justify-content: flex-end; » n’est pas la même que « flex-direction: row-reverse; ». Alors
+            qu’avec la première variante, le dernier élément
+            est positionné complètement à droite, la deuxième variante modifie toute la disposition. Le premier élément
+            dans le code apparaitrait complètement à droite.
+        </p>
+    </section>
+
+    <section class="main-section" id="Regrouper_des_éléments">
+        <header>Regrouper des éléments</header>
+        <p>
+            Jusque-là, nous avons réparti les conteneurs flexibles de façon équitable. Mais on ne veut pas toujours
+            traiter tous les objets de la même manière dans le
+            webdesign. On souhaite par exemple présenter un texte autrement qu’une image. Pour ce faire, on peut
+            regrouper les éléments dans le code HTML :
+        </p>
+
+        <pre>
+    <code>
+        &lt;div class="flex-container">
+        &lt;div class="flex-item">Box 1</div>
+        &lt;div class="flex-item">
+        &lt;div class="flex-item">Box 2</div>
+        &lt;div class="flex-item">Box 3</div>
+        &lt;/div>
+        &lt;/div>
+    </code>
+    </pre>
+
+        <img class="image__flexbox_1"
+            src="https://www.ionos.fr/digitalguide/fileadmin/DigitalGuide/Screenshots_2020/flexbox-2.png">
+    </section>
+
+
+    <section class="main-section" id="Glissement_vertical">
+        <header>Glissement vertical</header>
+        <p>
+            Avec la propriété « justify-content » vous pouvez aligner des items sur l’axe horizontal, en respectant un
+            certain rapport. Si on veut quand même déplacer
+            ses conteneurs du haut vers le bas (sur l’axe perpendiculaire), il faut utiliser la propriété « <span class=mark>align-items</span>
+            ». Ici aussi, vous disposez de 5 différentes options :
+        </p>
+
+        <ul>
+            <li><span class="item__list">center</span> : les items sont centrés</li>
+            <li><span class="item__list">flex-start</span> : les items sont alignés sur le bord supérieur.</li>
+            <li><span class="item__list">flex-end</span> : les items sont alignés sur le bord inférieur.</li>
+            <li><span class="item__list">stretch</span> : les items sont étirés.</li>
+            <li><span class="item__list">baseline</span> : indépendamment du contenu, les objets sont alignés sur la
+                ligne de base.</li>
+        </ul>
+
+        <p>
+            À première vue, les deux options « flex-start » et « baseline » semblent donner le même résultat. L’effet
+            sera pourtant différent si on a des objets qui sont imbriqués
+            les uns dans les autres. Alors que « flex-start » associe les deux conteneurs flexibles qui sont situés au
+            même niveau de hiérarchie, la propriété « baseline »
+            tiendra aussi compte des éléments renfermés dans les conteneurs. </br></br>
+            Pour centrer trois objets de tailles différentes, on doit donc recourir au code suivant :
+        </p>
+
+        <pre>
+    <code>
+        &lt;!DOCTYPE html>
+        &lt;html>
+        &lt;head>
+        &lt;style>
+        .flex-container {
+          display: flex;
+          background-color: grey;
+          justify-content: center;
+          align-items: center;
+        }
+        
+        .flex-item1 {
+          background-color: white;
+          width: 200px;
+          margin: 10px;
+          text-align: center;
+          line-height: 100px;
+          font-size: 50px;
+        }
+        .flex-item2 {
+          background-color: blue;
+          width: auto;
+          margin: 10px;
+          text-align: center;
+          line-height: 100px;
+          font-size: 50px;
+        }
+        .flex-item3 {
+          background-color: grey;
+          width: 200px;
+          margin: 10px;
+          text-align: center;
+          line-height: 100px;
+          font-size: 50px;
+        &lt;/style>
+        
+        &lt;/head>
+        &lt;body>
+        
+        &lt;div class="flex-container">
+            &lt;div class="flex-item1">Box 1</div>
+            &lt;div class="flex-item2">
+            &lt;div class="flex-item3">Box a</div>
+            &lt;div class="flex-item3">Box b</div>
+            &lt;/div>
+            &lt;div class="flex-item1">Box 2</div>
+        &lt;/div>
+        
+        &lt;/body>
+        &lt;/html>
+    </code>
+    </pre>
+
+        <img class="image__flexbox_1"
+            src="https://www.ionos.fr/digitalguide/fileadmin/DigitalGuide/Screenshots_2020/flexbox-3.png">
+
+        <p>
+            Vous pouvez aussi jouer sur l’étirement vertical au moyen de ces retours à la ligne. Si on place beaucoup
+            d’objets dans un conteneur, ils se placeraient
+            les uns en dessous des autres, et l’utilisateur devra faire défiler son écran vers le bas, ce qui le fera
+            quitter la zone d’affichage. Avec la propriété « <span class=mark>flex-wrap</span> »
+            vous pourrez répartir les éléments sur plusieurs lignes.
+        </p>
+
+        <ul>
+            <li><span class="item__list">nowrap</span> : aucun retour à la ligne</li>
+            <li><span class="item__list">wrap</span> : retour à la ligne</li>
+            <li><span class="item__list">wrap-reverse</span> : retour à la ligne (avec une disposition dans un ordre
+                inversé)</li>
+        </ul>
+
+        <pre>
+    <code>   
+        .flex-container {
+            display: flex;
+            background-color: grey;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap-reverse;
+          }
+    </code>
+    </pre>
+
+    </section>
+
+    <section class="main-section" id="Déplacer_les_conteneurs_flexibles_un_par_un">
+        <header>Déplacer les conteneurs flexibles un par un</header>
+
+        <p>
+            Jusque-là, nous avons toujours appliqué la disposition au conteneur complet. Tous les éléments à l’intérieur
+            du conteneur se soumettent aux indications globales.
+            Cela vous facilite le travail, mais a aussi un effet restrictif. Avec CSS Flexbox, un Webdesigner peur aussi
+            définir des exceptions. Pour ce faire, on utilise la
+            fonction « <span class=mark>order</span> ». La valeur par défaut (si rien d’autre n’a été défini) est 0. La valeur d’ordre attribue
+            l’objet à un groupe abstrait. Tous les éléments que nous
+            avons créés jusque-là appartiennent au même groupe, puisqu’ils ont tous la valeur 0. A partir de cette
+            valeur, il est possible de faire avancer certains objets vers
+            l’avant (-1) ou les ramener vers l’arrière (1).</br></br>
+            Si on attribue donc la valeur zéro à tous les éléments, et que l’on donne la valeur 1 à un objet
+            sélectionné, celui-ci ne sera affiché qu’après tous les autres.
+            Cette procédure peut être exploitée avec d’autres valeurs (supérieures ou inférieures). Il s’agit ici
+            uniquement d’une <span class=mark>présentation visuelle</span> : l’ordre logique
+            conforme au document HTML reste inchangé.
+        </p>
+
+        <pre>
+        <code>
+               &lt;!DOCTYPE html>
+               &lt;html>
+               &lt;head>
+               &lt;style>
+               .flex-container {
+                 display: flex;
+                 background-color: grey;
+                 justify-content: center;
+                 align-items: center;
+                 flex-direction: row;
+               }
+               
+               .flex-item1 {
+                 background-color: white;
+                 width: 200px;
+                 margin: 10px;
+                 text-align: center;
+                 line-height: 100px;
+                 font-size: 50px;
+               }
+               .flex-item2 {
+                 background-color: white;
+                 width: 200px;
+                 margin: 10px;
+                 text-align: center;
+                 line-height: 100px;
+                 font-size: 50px;
+                 order: -1;
+               }
+               &lt;/style>
+               &lt;/head>
+               &lt;body>
+               
+               &lt;div class="flex-container">
+                 &lt;div class="flex-item1">Box 1</div>
+                 &lt;div class="flex-item2">Box 2 </div>
+                 &lt;div class="flex-item1">Box 3</div>
+               
+               &lt;/div>
+               
+               &lt;/body>
+               &lt;/html>
+        </code>
+    </pre>
+    </section>
+
+    <section class="main-section" id="Taille_flexible_des_éléments">
+        <header>Taille flexible des éléments</header>
+
+        <img class="image__flexbox_1"
+            src="https://www.ionos.fr/digitalguide/fileadmin/DigitalGuide/Screenshots_2020/flexbox-4.png">
+
+        <p>
+            Jusque-là, nous avons juste abordé la disposition flexible des objets. Dans le code donné à titre d’exemple,
+            la dimension des objets a toujours été gérée de manière
+            classique par le CSS. Les conteneurs flexibles peuvent aussi être ajustés en fonction de leurs dimensions.
+            Pour ce faire, on utilise la propriété « <span class=mark>flex</span> ». Comme pour
+            leur disposition, vous pouvez répartir des éléments en différents groupes. Plus la valeur est grande, plus
+            l’élément occupera de place.
+        </p>
+
+        <pre>
+        <code>
+            .flex-container {
+                display: flex;
+                background-color: grey;
+                justify-content: center;
+                align-items: center;
+                flex-direction: row;
+              }
+              
+              .flex-item1 {
+                background-color: white;
+                width: 200px;
+                margin: 10px;
+                text-align: center;
+                line-height: 100px;
+                font-size: 50px;
+              }
+              .flex-item2 {
+                background-color: white;
+                width: 200px;
+                margin: 10px;
+                text-align: center;
+                line-height: 100px;
+                font-size: 50px;
+                flex: 1;
+              }
+        </code>
+    </pre>
+
+        <p>
+            Avec la propriété « flex » on utilise en fait un raccourci. Cette propriété renferme en fait trois
+            paramètres : « flex-grow », « flex-shrink » et « flex-basis ».
+            Il est possible de renseigner les trois valeurs directement dans le raccourci (flex : <flex-grow>
+                <flex-shrink>
+                    <flex-basis> / flex: 1 1 20em) ou de renseigner chaque
+                        valeur en particulier, et de confier le paramétrage au CSS.
+        </p>
+
+        <img class="image__flexbox_1"
+            src="https://www.ionos.fr/digitalguide/fileadmin/DigitalGuide/Screenshots_2020/flexbox-5.png">
+
+    </section>
+
+
+    <section class="main-section" id="En_conclusion">
+        <header>En conclusion</header>
+
+        <p>
+            Flexbox permet de résoudre beaucoup de difficultés de mise en page, mais l’implémentation dans toutes les
+            versions de navigateurs reste problématique, même si la
+            plupart des propriétés Flexbox sont reconnues par les dernières versions. Au final, Flexbox vaut vraiment le
+            détour.</br></br>
+
+            Pour allé plus loin, voici quelques liens:
+        </p>
+
+        <ul>
+        <ul class="liens">
+            <li> <a href="https://la-cascade.io/flexbox-guide-complet/" target="_blank">Lien 1</a></li>
+            <li> <a href="https://www.spiria.com/fr/blogue/developpement-web/flexbox/" target="_blank">Lien 2</a></li>
+            <li> <a href="https://css-tricks.com/snippets/css/a-guide-to-flexbox/" target="_blank">Lien 3</a></li>
+            <li> <a href="https://developer.mozilla.org/fr/docs/Web/CSS/CSS_Flexible_Box_Layout/Basic_Concepts_of_Flexbox"
+                    target="_blank">Lien 4</a></li>
+            <li> <a href="https://openclassrooms.com/fr/courses/1603881-apprenez-a-creer-votre-site-web-avec-html5-et-css3/3298561-faites-votre-mise-en-page-avec-flexbox"
+                    target="_blank">Lien 5</a></li>
+        </ul>
+
+        <ul class="button__retour">
+            <li><a href="#Introduction">Retour a l'introduction</a></li>
+        </ul>
+    </section>
+</main>
+
+</html>
