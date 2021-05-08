@@ -14,25 +14,29 @@
 
     <nav id="navbar">
         <ul>
-            <li><a href="#" class="nav-link">Accueil</a></li>
-            <li><a href="#" class="nav-link">Mes Projects</a></li>
-            <li><a href="#" class="nav-link">Contacter</a></li>
+            <li><a href="#welcome-section" class="nav-link">Accueil</a></li>
+            <li><a href="#projects" class="nav-link">Mes Projects</a></li>
+            <li><a href="#contacter" class="nav-link">Contacter</a></li>
         </ul>
     </nav>
 
     <section id="welcome-section">
+        <div class="welcome">
         <h1>Bonjour, je suis Olivia ...</h1>
         <p class="text__italic">Développeur web :-)</p>
+        </div>
+        <div class="arrow__bot">
+            <a class="arrow__bot__a" href="#projects"></a>
+        </div>
     </section>
 
     <section id="projects">
-        <h2>Mes nombreux projects sont : </h2>
+        <h2 class="h2__project">Mes nombreux projects sont : </h2>
         <div class="projects__class">
             <div class="project-tile">
                 <img class="image" loading="lazy" alt=""
                     src="https://assets.codepen.io/5848720/internal/screenshots/pens/ExZQyWo.default.png">
                 <a href="https://codepen.io/oliviag-dev/full/ExZQyWo" class="project__name">Tribute Page</a>
-                </p>
             </div>
             <div class="project-tile">
                 <img class="image" loading="lazy" alt=""
@@ -60,10 +64,22 @@
                 <a href="https://codepen.io/oliviag-dev/full/JjWoRrY" class="project__name">Portfolio</a>
             </div>
         </div>
+        <div class="arrow__top">
+            <a class="arrow__top__a" href="#welcome-section"></a>
+            <a class="arrow__bot__a" href="#contacter"></a>
+        </div>
     </section>
 
     <section id="contacter">
-        <h2></h2>
+        <div class="contacter__citation">
+        <h2 class="citation">"The difference between theory and practice is smaller in theory than in practice."</h2>
+        </div>
+        <div class="arrow__top">
+            <a class="arrow__top__a" href="#projects"></a>
+        </div>
+        <div class="footer">
+            
+        </div>
     </section>
 </body>
 

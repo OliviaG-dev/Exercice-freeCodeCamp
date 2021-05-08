@@ -1,3 +1,7 @@
+html {
+    scroll-behavior: smooth;
+}
+
 *{
     margin: 0;
     padding: 0;
@@ -41,10 +45,14 @@ li a {
     background-color: cadetblue;
     height:100vh;
     width: 100%;
+}
+.welcome{
     display: flex;
     align-items: center;
     flex-direction: column;
     justify-content: center;
+    height: 97%;;
+    width: 100%;
 }
 
 h1 {
@@ -70,7 +78,7 @@ h1 {
     align-items: center;
 }
 
-h2 {
+.h2__project {
     font-size: 3rem;
     text-decoration: underline;
     padding: 5rem 2rem 2rem;
@@ -108,7 +116,33 @@ h2 {
     font-family: 'Lato', sans-serif;
 }
 
+.arrow__top {
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+}
 
+.arrow__top__a{
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0 25px 25px 25px;
+    border-color: transparent transparent darkgrey transparent;
+}
+
+.arrow__bot{
+    display: flex;
+    justify-content: center;
+    width: 100%
+}
+
+.arrow__bot__a{
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 25px 25px 0 25px;
+    border-color: darkgrey transparent transparent transparent;
+}
 
 
 #contacter{
@@ -117,3 +151,28 @@ h2 {
     width: 100%;
 }
 
+
+.contacter__citation {
+    width: 100%;
+    height: 97%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.citation{
+    font-family: 'Goblin One', cursive;
+    font-size: clamp(12px, (1rem + 5vw), 40px);
+    color: rgb(34, 49, 99);
+    max-width: 65%;
+    text-align: justify;
+}
+
+.footer{
+    width: 100%;
+    height: 20%;
+    border-top: 0.5rem rgb(34, 49, 99) solid;
+    background-color:cadetblue;
+}
